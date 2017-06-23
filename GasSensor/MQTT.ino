@@ -57,9 +57,9 @@ void MQTT_connect() {
 	error_log("MQTT connected");
 
 	// Подписываемся на топики
-	String topic = "home/"+ _ssidAP + "/#";
-	error_log("MQTT subscribe to topic "+topic);
-	clientForMQTT.subscribe(topic.c_str());
+	//String topic = "home/"+ _ssidAP + "/#";
+	//error_log("MQTT subscribe to topic "+topic);
+	//clientForMQTT.subscribe(topic.c_str());
 }
 
 void MQTT_publish(String topic, String message) {

@@ -14,12 +14,12 @@ void DHT_loop() {
 		Humidity = dht.readHumidity();
 		Temperature = dht.readTemperature();
 		if (isnan(Humidity) || isnan(Temperature)) {
-			Humidity = 0.0;
-			Temperature = 0.0;
-			HeatIndex = 0.0;
-		} else {
-			HeatIndex = dht.computeHeatIndex(Temperature, Humidity, false);
+			error_log("Error get Temperature");
+			return;
 		}
+		
+		HeatIndex = dht.computeHeatIndex(Temperature, Humidity, false);
+		
 		MQTT_publish("home/"+ _ssidAP + "/Humidity",(String) Humidity);
 		MQTT_publish("home/"+ _ssidAP + "/Temperature",(String) Temperature);
 		MQTT_publish("home/"+ _ssidAP + "/HeatIndex",(String) HeatIndex);
