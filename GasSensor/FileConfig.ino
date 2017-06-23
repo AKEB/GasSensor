@@ -44,9 +44,6 @@ bool loadConfig() {
 	SSDP_Name = root["SSDPName"].as<String>();
 	_ssid = root["ssidName"].as<String>();
 	_password = root["ssidPassword"].as<String>();
-	ColdWaterCount = root["ColdWaterCount"];
-	HotWaterCount = root["HotWaterCount"];
-	Alert = root["Alert"];
 	SaveCount = root["SaveCount"];
 	
 	_mqtt_host = root["mqtt_host"].as<String>();
@@ -72,9 +69,6 @@ bool saveConfig() {
 	json["ssidName"] = _ssid;
 	json["ssidPassword"] = _password;
 	json["timezone"] = timezone;
-	json["ColdWaterCount"] = ColdWaterCount;
-	json["HotWaterCount"] = HotWaterCount;
-	json["Alert"] = Alert;
 	json["SaveCount"] = SaveCount;
 	
 	json["mqtt_host"] = _mqtt_host;

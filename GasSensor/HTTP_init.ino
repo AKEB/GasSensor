@@ -79,6 +79,13 @@ void handle_ConfigJSON() {
 	json["time"] = GetTime();
 	json["date"] = GetDate();
 
+	json["Humidity"] = Humidity;
+	json["Temperature"] = Temperature;
+	json["HeatIndex"] = HeatIndex;
+
+	json["GasSensor"] = GasSensor > 0 ? "Да" : "Нет";
+	json["GasSensorClass"] = GasSensor > 0 ? "danger" : "success";	
+
 	json["mqtt_host"] = _mqtt_host;
 	json["mqtt_port"] = _mqtt_port;
 	json["mqtt_user"] = _mqtt_user;
@@ -88,11 +95,6 @@ void handle_ConfigJSON() {
 	json["http_password"] = _http_password;
 	
 	json["SaveCount"] = SaveCount;
-	json["ALERT"] = Alert > 0 ? "Да" : "Нет";
-	json["AlertClass"] = Alert > 0 ? "danger" : "success";
-
-	json["ColdWaterCounter"] = ColdWaterCount;
-	json["HotWaterCounter"] = HotWaterCount;
 
 	json["Uptime"] = uptime();
 	

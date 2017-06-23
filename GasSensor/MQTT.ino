@@ -87,17 +87,7 @@ void callbackForMQTT(char* topic, byte* payload, unsigned int length) {
 	
 	topic_String.remove(0, t.length());
 
-	if (topic_String.equals("cold")) {
-		if (ColdWaterCount != payload_String.toInt()) saveConfigNeed = true;
-		ColdWaterCount = payload_String.toInt();
-	} else if (topic_String.equals("hot")) {
-		if (HotWaterCount != payload_String.toInt()) saveConfigNeed = true;
-		HotWaterCount = payload_String.toInt();
-	} else if (topic_String.equals("alert")) {
-		if (Alert != payload_String.toInt()) saveConfigNeed = true;
-		Alert = payload_String.toInt();
-	}
-
+	
 	if (saveConfigNeed) saveConfig();
 }
 

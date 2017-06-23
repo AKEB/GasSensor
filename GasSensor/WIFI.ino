@@ -49,11 +49,11 @@ void WIFI_loop() {
 		if (inner_led_state == LOW) {
  			inner_led_state = HIGH;  // Note that this switches the LED *off*
  			if (wifi_mode == WIFI_STA) wifi_mode_time = 5000;
- 			else wifi_mode_time = 100;
+ 			else wifi_mode_time = 200;
 		} else {
 			inner_led_state = LOW;   // Note that this switches the LED *on*
 			if (wifi_mode == WIFI_STA) wifi_mode_time = 200;
- 			else wifi_mode_time = 100;
+ 			else wifi_mode_time = 200;
 		}
 		digitalWrite(INNER_LED_PIN, inner_led_state);
 	}
