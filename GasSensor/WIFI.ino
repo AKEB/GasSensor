@@ -17,7 +17,7 @@ void WIFI_start() {
 	// Делаем проверку подключения до тех пор пока счетчик tries
 	// не станет равен нулю или не получим подключение
 	while (--tries && WiFi.status() != WL_CONNECTED) {
-		error_log(".", false);
+		error_log(".");
 		digitalWrite(INNER_LED_PIN, HIGH);
 		delay(500);
 		digitalWrite(INNER_LED_PIN, LOW);
@@ -36,8 +36,7 @@ void WIFI_start() {
 		// Иначе удалось подключиться отправляем сообщение
 		// о подключении и выводим адрес IP
 		error_log("WiFi connected");
-		error_log("IP address: ", false);
-		error_log((String) WiFi.localIP());
+		error_log("IP address: " + (String) WiFi.localIP());
 	}
 }
 

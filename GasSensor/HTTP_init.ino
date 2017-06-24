@@ -95,8 +95,10 @@ void handle_ConfigJSON() {
 	json["http_password"] = _http_password;
 	
 	json["SaveCount"] = SaveCount;
-
+	
 	json["Uptime"] = uptime();
+
+	json["Log"] = Log;
 	
 	// Помещаем созданный json в переменную root
 	root = "";

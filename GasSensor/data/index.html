@@ -9,40 +9,23 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Главная</title>
 		<script type="text/javascript">
-			var timer = null;
-			var edit = false;
 			function handleServerResponse(){
-				if (edit) return false;
 				console.log('handleServerResponse');
 				console.dir(jsonResponse);
 				
 				setValue("Humidity", Number(jsonResponse.Humidity).toFixed(2) + ' %');
 				setValue("Temperature", '<b>'+Number(jsonResponse.Temperature).toFixed(2) + '</b> *C');
 				setValue("HeatIndex", Number(jsonResponse.HeatIndex).toFixed(2) + ' *C');
-				
+				setValue("Logs", jsonResponse.Log);
 				setValue("GasSensor", '<b>'+jsonResponse.GasSensor + '</b>');
 				var GasSensor = document.getElementById("GasSensor");
 				GasSensor.className = ""+jsonResponse.GasSensorClass;
 				
 				setValue("Uptime", jsonResponse.Uptime);
 				
-				timer = setTimeout(function(){
+				setTimeout(function(){
 					load();
 				}, 5000);
-			}
-			
-			function stopTimer() {
-				console.log('stopTimer');
-				edit = true;
-				clearTimeout(timer);
-			}
-			
-			function startTimer() {
-				console.log('startTimer');
-				edit = false;
-				timer = setTimeout(function(){
-					load();
-				}, 300);
 			}
 			
 		</script>
@@ -85,7 +68,12 @@
 						</div>
 					</div>
 					<hr>
-					
+					<div class="panel panel-default">
+						<div class="panel-heading">Логи</div>
+						<div class="panel-body" id="Logs" style="text-align:left;">
+							
+						</div>
+					</div>
 					<input class="btn btn-block btn-danger" value="Перезагрузить устройство" onclick="restart(this,'Вы действительно хотите перезагрузить устройство?');" type="submit">
 				</div>
 			</div>

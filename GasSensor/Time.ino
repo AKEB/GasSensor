@@ -1,5 +1,6 @@
 #include <time.h>               //Содержится в пакете
 
+
 void Time_init() {
 	HTTP.on("/Time", handle_Time);     // Синхронизировать время устройства по запросу вида /Time
 	HTTP.on("/TimeZone", handle_time_zone);    // Установка времянной зоны по запросу вида /TimeZone?timezone=3
@@ -25,14 +26,14 @@ void timeSynch(int zone){
 		// Настройка соединения с NTP сервером
 		configTime(zone * 3600, 0, "pool.ntp.org", "ru.pool.ntp.org");
 		int i = 0;
-		error_log("\nWaiting for time");
+		error_log("Waiting for time");
 		while (!time(nullptr) && i < 10) {
-			error_log(".", false);
+			error_log(".");
 			i++;
 			delay(1000);
 		}
 		error_log("");
-		error_log("ITime Ready!");
+		error_log("Time Ready!");
 		error_log(GetTime());
 		error_log(GetDate());
 	}
