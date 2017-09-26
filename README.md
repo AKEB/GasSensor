@@ -5,6 +5,10 @@
 Отображение в web интерфейсе и отправка на сервер умного дома по протоколу MQTT
 
 
+FileSystem Install
+https://github.com/esp8266/arduino-esp8266fs-plugin
+
+
 # Распиновка #
 
 
