@@ -51,6 +51,8 @@ bool loadConfig() {
 	_mqtt_user = root["mqtt_user"].as<String>();
 	_mqtt_password = root["mqtt_password"].as<String>();
 
+	_revision = root["revision"].as<String>();
+
 	_http_user = root["http_user"].as<String>();
 	_http_password = root["http_password"].as<String>();
 	return true;
@@ -70,6 +72,8 @@ bool saveConfig() {
 	json["ssidPassword"] = _password;
 	json["timezone"] = timezone;
 	json["SaveCount"] = SaveCount;
+	
+	json["revision"] = _revision;
 	
 	json["mqtt_host"] = _mqtt_host;
 	json["mqtt_port"] = _mqtt_port;

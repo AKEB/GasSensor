@@ -83,6 +83,8 @@ void handle_ConfigJSON() {
 	json["Temperature"] = Temperature;
 	json["HeatIndex"] = HeatIndex;
 
+	json["revision"] = _revision;
+
 	json["GasSensor"] = GasSensor > 0 ? "Да" : "Нет";
 	json["GasSensorClass"] = GasSensor > 0 ? "danger" : "success";	
 
