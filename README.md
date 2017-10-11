@@ -5,20 +5,14 @@
 Отображение в web интерфейсе и отправка на сервер умного дома по протоколу MQTT
 
 
-FileSystem Install
-(https://github.com/esp8266/arduino-esp8266fs-plugin)
-
-EasyEDA Project
-(https://easyeda.com/AKEB/New_Project-71627d214a5542078ba6a168b7f5fc28)
-
-
-# Распиновка #
-
-
 ## Ссылки ##
+* [FileSystem Install](https://github.com/esp8266/arduino-esp8266fs-plugin)
+* [EasyEDA Project](https://easyeda.com/AKEB/New_Project-71627d214a5542078ba6a168b7f5fc28)
 * [esptool-gui](https://github.com/Rodmg/esptool-gui)
 * [esptool](https://github.com/espressif/esptool)
 
+
+# Распиновка #
 
 ## Код для заливки прошивки ##
 ```
