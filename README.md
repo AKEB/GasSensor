@@ -6,10 +6,10 @@
 
 
 FileSystem Install
-[https://github.com/esp8266/arduino-esp8266fs-plugin]
+(https://github.com/esp8266/arduino-esp8266fs-plugin)
 
 EasyEDA Project
-[https://easyeda.com/AKEB/New_Project-71627d214a5542078ba6a168b7f5fc28]
+(https://easyeda.com/AKEB/New_Project-71627d214a5542078ba6a168b7f5fc28)
 
 
 # Распиновка #
