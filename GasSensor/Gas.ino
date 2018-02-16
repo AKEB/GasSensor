@@ -8,7 +8,20 @@ void Gas_loop() {
 	if(currentMillis - gas_previous_millis >= gas_interval) {
 		gas_previous_millis = currentMillis;
 		GasSensor = digitalRead(GAS_SENSOR_PIN);
-		MQTT_publish("home/"+ _ssidAP + "/GasSensor",(String)GasSensor);
+
+		if (GasSensor != Last_GasSensor || currentMillis-Last_Send_millis2 >= 1*60*60*1000) {
+
+			Last_GasSensor = GasSensor;
+			Last_Send_millis2 = currentMillis;
+			
+			MQTT_publish("home/"+ _ssidAP + "/GasSensor",(String)GasSensor);
+			
+		}
+
+		
+		
+		
+		
 		
 		if (GasSensor > 0) {
 			tone(BUZZER_PIN, 1480, gas_interval+500);

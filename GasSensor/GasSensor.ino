@@ -25,7 +25,7 @@ File fsUploadFile;
 
 DHT dht(DHT22_PIN, DHTTYPE);
 
-String _revision = "1.1"; // Версия кода
+String _revision = "1.2"; // Версия кода
 
 // Определяем переменные wifi
 String _ssid     = "AKEB"; // Для хранения SSID
@@ -68,6 +68,10 @@ int mqtt_reconnect_interval = 5000;
 unsigned long dht_previous_millis = 0;
 int dht_interval = 5000;
 
+float Last_Humidity = 0.0;
+float Last_Temperature = 0.0;
+unsigned long Last_Send_millis = 0;
+
 float Humidity = 0.0;
 float Temperature = 0.0;
 float HeatIndex = 0.0;
@@ -75,6 +79,9 @@ float HeatIndex = 0.0;
 unsigned long gas_previous_millis = 0;
 int gas_interval = 1000;
 
+
+int Last_GasSensor = -1;
+unsigned long Last_Send_millis2 = 0;
 int GasSensor = 0;
 
 WiFiClient wifiClientForMQTT;
