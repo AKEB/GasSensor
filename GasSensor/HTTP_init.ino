@@ -79,9 +79,9 @@ void handle_ConfigJSON() {
 	json["time"] = GetTime();
 	json["date"] = GetDate();
 
-	json["Humidity"] = Humidity;
-	json["Temperature"] = Temperature;
-	json["HeatIndex"] = HeatIndex;
+	json["Humidity"] = !isnan(Humidity) ? Humidity : 0.0;
+	json["Temperature"] = !isnan(Temperature) ? Temperature : 0.0;
+	json["HeatIndex"] = HeatIndex ? HeatIndex : 0;
 
 	json["revision"] = _revision;
 
